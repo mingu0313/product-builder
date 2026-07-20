@@ -294,6 +294,23 @@
             opacity: 0.5;
         }
 
+        .comments-section {
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-top: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+        }
+
+        .comments-section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+            text-align: left;
+        }
+
         /* Custom Scrollbar */
         .history-list::-webkit-scrollbar {
             width: 6px;
@@ -339,6 +356,11 @@
             <ul class="history-list" id="history-list">
                 <!-- History items will appear here -->
             </ul>
+        </div>
+
+        <div class="comments-section">
+            <h2>댓글</h2>
+            <div id="disqus_thread"></div>
         </div>
     </div>
 
@@ -533,5 +555,19 @@
         createMachineBalls();
         updateMachine();
     </script>
+
+    <script>
+        var disqus_config = function () {
+            this.page.url = window.location.href;
+            this.page.identifier = 'lotto-6-45';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://productbuilder-clbdos7lfu.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </body>
 </html>
